@@ -7,7 +7,6 @@
 </head>
 <body>
     <script>
-
         //without parameters
         function demo() {
             console.log("Hello JS");
@@ -27,28 +26,84 @@
         demo1("React");
         cal(12);
         demo();
-
         //anonymous function
-        let msg = () => {
-console.log("Hello aadvanced JS");
+        let msg = function() {
+            console.log("Hello Advanced JS");
         }
-msg();
+        msg();
 
-//share code for above functiion i.e. arrow function=
+        //shore code for above function i.e. arrow function
+        let msg1 = () => {
+            console.log("Hello function as an arrow ");
+            msg1();
+        }
+         //arrow function using multilines
+         let add = (a,b) => {
+            let c = a + b;
+            console.log("addition of two number is " + c);
+         }
+         add(4,7);
 
-let msg1 = () => {
-    console.log("Hello function as an arrow");
-    msg1();
-} 
-//arrow function using multipliers
-let ad =(a,b) => {
-    let c = a+b;
-    console.log("addition of two number is" + c);
-}
+         //IIFEE - Immediately Invoked Function Expression
+         //(IIFEE) is a javacsript function that runs as soon as it is defined.
+            (function() {
+                console.log(" IIFEE in JS");
+            })();
 
-     
+            //IIFEE using arrow function
+            (() => {
+                console.log(" IIFEE in JS using arrow function");
+            })();
+
+            //callback function:-
+            //call back function is a function that is passed as an argument to another function and is executed after some operation is completed.
+            function mul(callback) {
+                var num1 = 5;
+                console.log("first number is " + num1);
+                var num2 = 10;
+                console.log("second number is " + num2);
+                var result = num1 * num2;
+                callback(result);
+
+            }
+            function result(result) {
+                console.log("The result is: " + result);
+            }
+            mul(result);
+            
+            //callback function using setTimeout API
+            function msg2() {
+                console.log("Hello after 3 seconds");
+                document.writeln("Hello");
+            }
+            function loading(){
+                document.writeln("Loading...");
+            };
+            setTimeout(msg2, 3000);
+            loading();
+
+            // map fiter and reduce function in JS
+            //the map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+                                                                        
+            let num = [1,2,3,4,5];
+            let finalresult = num.map(n=>n*2);
+            console.log(finalresult);
+
+            //filter method
+            //filter method :- method creates a new array with all elements that pass the test implemented by the provided function.
+            let finalresult1 = num.filter(n=>n>3);
+            console.log(finalresult1);
+
+            //reduce method
+            //reduce method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+            let finalresult2 = num.reduce((acc, n) => acc + n, 0);
+            console.log(finalresult2);
+
+            //asynchronous function
+            
 
 
     </script>
+
 </body>
 </html>
